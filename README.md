@@ -19,6 +19,7 @@ console.log(nh().checkPrime(2554546454568632135454698765463132135454686654545463
 ```
 
 ## getFibonacciSeries
+
 Generates a sequence of Fibonacci Series that includes a0 and a1, which are passed as parameters
 @param {Number} a0 - Positive Integer that signifies the first number in the sequence
 @param {Number} a1 - Positive Integer that signifies the second number in the sequence
@@ -28,3 +29,10 @@ Generates a sequence of Fibonacci Series that includes a0 and a1, which are pass
 var nh = require('math-lib');
 console.log(nh().getFibonacciSeries(0, 1, 10)); // returns [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ]
 ```
+## getFibonacciSeriesUpto
+
+Generates a sequence of Fibonacci Series that includes a0 and a1, which are passed as parameters upto an upper limit that is specified as one of the parameters
+@param {Number} a0 - Positive Integer that signifies the first number in the sequence
+@param {Number} a1 - Positive Integer that signifies the second number in the sequence
+@param {Number} upperLimit - Positive Integer that denotes the number up till the terms of the Fibonacci series are to be generated
+@return {JSON} A JSON array that contains the list of the Fibonacci Series, invalid input error if a0 and a1 are not positive integers, Error is a0 >= a1, Error if a0 or a1 or upperLimit is larger than the largest number supported by Javascript
