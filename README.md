@@ -23,7 +23,7 @@ Generates an array of Fibonacci Series that includes a0 and a1, which are passed
 var nh = require('math-lib');
 console.log(nh().getFibonacciSeries(0, 1, 10)); // returns [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ]
 ```
-## function getFibonacciSeriesUpto(a0, a1, upperLimit)
+## getFibonacciSeriesUpto(a0, a1, upperLimit)
 Generates an array of Fibonacci Series upto a user specified upper limit.
 
 ```
