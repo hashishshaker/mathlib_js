@@ -78,10 +78,44 @@ function NumberHelper() {
     }
   }
 
+  /*
+  * Generates a list all prime numbers up to a given input. Implements Sieve of Eratosthenes.
+  * @param {Number} input - Positive Integer greater than 1 up to which prime numbers are to be generated
+  * @return {JSON} A JSON array that contains the list of the prime numbers less than or equal to the input
+  */
+  function listPrimeNumbersUpto(input) {
+    if (!Number.isInteger(input) || input < 1) {
+      return Error('input has to be a positive integer greater than 1');
+    }
+
+    var checkArray = [];
+    var outputArray = [];
+
+    for (var k = 0; k < input; k++) {
+      checkArray.push(true);
+    }
+    var upperBound = Math.ceil(Math.sqrt(input));
+    for (var i = 2; i < upperBound; i++) {
+      if (checkArray[i - 1]) {
+        for (var j = i * i; j <= input; j += i) {
+          checkArray[j - 1] = false;
+        }
+      }
+    }
+
+    for (var l = 1; l < checkArray.length; l++) {
+      if(checkArray[l]) {
+        outputArray.push(l + 1);
+      }
+    }
+    return outputArray;
+  }
+
   return {
     checkPrime: checkPrime,
     getFibonacciSeries: getFibonacciSeries,
-    getFibonacciSeriesUpto: getFibonacciSeriesUpto
+    getFibonacciSeriesUpto: getFibonacciSeriesUpto,
+    listPrimeNumbersUpto: listPrimeNumbersUpto
   }
 };
 
