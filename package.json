@@ -1,6 +1,6 @@
 {
   "name": "math-lib",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "contains helper functions for many mathematical utilities",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,9 @@
     "url": "git+https://github.com/hashishshaker/mathlib_js.git"
   },
   "keywords": [
-    "math"
+    "math",
+    "mathematics",
+    "prime numbers"
   ],
   "author": "Shashi Shekhar",
   "license": "ISC",

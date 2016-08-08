@@ -111,11 +111,31 @@ function NumberHelper() {
     return outputArray;
   }
 
+  /*
+  * Generates a list all prime factors of a given input.
+  * @param {Number} input - Positive Integer greater than 1 for which prime factors are to be generated.
+  * @return {JSON} A JSON array that contains the list of the prime factors of the input
+  */
+  function getPrimeFactors(input) {
+    var result = [];
+    if(input > Number.MAX_SAFE_INTEGER || !Number.isInteger(input) || input < 2) {
+      return Error('invalid input');
+    }
+    var primeNumberListUptoInput = listPrimeNumbersUpto(Math.ceil(Math.sqrt(input)));
+    primeNumberListUptoInput.forEach(function(value) {
+      if(input % value === 0) {
+        result.push(value);
+      }
+    });
+    return result;
+  }
+
   return {
     checkPrime: checkPrime,
     getFibonacciSeries: getFibonacciSeries,
     getFibonacciSeriesUpto: getFibonacciSeriesUpto,
-    listPrimeNumbersUpto: listPrimeNumbersUpto
+    listPrimeNumbersUpto: listPrimeNumbersUpto,
+    getPrimeFactors: getPrimeFactors
   }
 };
 
