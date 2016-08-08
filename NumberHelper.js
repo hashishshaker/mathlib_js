@@ -79,7 +79,7 @@ function NumberHelper() {
   }
 
   /*
-  * Generates list all prime numbers up to a given input. Implements Sieve of Eratosthenes.
+  * Generates a list all prime numbers up to a given input. Implements Sieve of Eratosthenes.
   * @param {Number} input - Positive Integer greater than 1 up to which prime numbers are to be generated
   * @return {JSON} A JSON array that contains the list of the prime numbers less than or equal to the input
   */
