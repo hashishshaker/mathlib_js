@@ -29,10 +29,16 @@ Generates an array of Fibonacci Series upto a user specified upper limit.
 var nh = require('math-lib');
 console.log(nh().getFibonacciSeriesUpto(0, 1, 10)); // returns [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89 ];
 ```
-## function listPrimeNumbersUpto(input)
+## listPrimeNumbersUpto(input)
 Generates a list all prime numbers up to a given input. Implements Sieve of Eratosthenes.
 
 ```
 var nh = require('math-lib');
 console.log(nh().listPrimeNumbersUpto(10)); // returns [ 2, 3, 5, 7 ]
+```
+## getPrimeFactors(input)
+Generates a list all prime factors of a given input.
+```
+var nh = require('math-lib');
+console.log(nh().getPrimeFactors(600851475143)); // returns [ 71, 839, 1471, 6857 ]
 ```

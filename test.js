@@ -16,8 +16,15 @@ function primeNumberListUptoTest() {
   return 'pass';
 }
 
-if(test() === 'pass') {
+function primeFactorTest() {
+  console.log(nh().getPrimeFactors(600851475143));
+}
+
+
+if(primeNumberListUptoTest() === 'pass') {
   console.log('pass');
 } else {
   console.log('fail');
 }
+
+primeFactorTest();
