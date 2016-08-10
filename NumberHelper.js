@@ -130,6 +130,27 @@ function NumberHelper() {
     return result;
   }
 
+  /*
+  * Computes the slope of a function foo at x
+  * @param {Function} foo - Function for which the slope is to be computed
+  * @param {Number} x - The value at which the slope is to be computed
+  * @return {Number} The value of slope of fucntion at x of function foo
+  */
+  function computeSlope(foo, x) {
+    var epsilon = Math.pow(10, -14);
+    var delta = 0.1;
+    var numberIterations = 1000;
+    var numberAttemmpts = 0
+    var newDelta = delta + epsilon;
+
+    while (((foo(x + delta) - foo(x - delta)) / (2 * delta) - (foo(x + newDelta) - foo(x - newDelta)) / (2 * newDelta)) > epsilon &&  numberAttemmpts < numberIterations) {
+      delta = newDelta;
+      newDelta = delta + epsilon;
+    }
+    return (foo(x + delta) - foo(x - delta)) / (2 * delta);
+  }
+
+
   return {
     checkPrime: checkPrime,
     getFibonacciSeries: getFibonacciSeries,
