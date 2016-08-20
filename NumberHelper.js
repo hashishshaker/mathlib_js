@@ -27,7 +27,7 @@ function NumberHelper() {
   * @param {Number} a0 - Positive Integer that signifies the first number in the sequence
   * @param {Number} a1 - Positive Integer that signifies the second number in the sequence
   * @param {Number} numberRequired - Positive Integer that denotes the number of terms of the Fibonacci series to be generated
-  * @return {JSON} A JSON array that contains the list of the Fibonacci Series, invalid input error if a0 and a1 are not positive integers, Error is a0 >= a1, Error if a0 or a1 is larger than the largest number supported by Javascript
+  * @return {JSON} A JSON array that contains the list of the Fibonacci Series, invalid input error if a0 and a1 are not positive integers, Error if a0 >= a1, Error if a0 or a1 is larger than the largest number supported by Javascript
   */
   function getFibonacciSeries(a0, a1, numberRequired) {
     if (a0 >= 0 && a1 >= 1 && a1 > a0 && Number.isInteger(a0) && Number.isInteger(a1) && a0 < Number.MAX_SAFE_INTEGER && a1 < Number.MAX_SAFE_INTEGER) {
@@ -137,16 +137,8 @@ function NumberHelper() {
   * @return {Number} The value of slope of fucntion at x of function foo
   */
   function computeSlope(foo, x) {
-    var epsilon = Math.pow(10, -14);
-    var delta = 0.1;
-    var numberIterations = 1000;
-    var numberAttemmpts = 0
-    var newDelta = delta + epsilon;
-
-    while (((foo(x + delta) - foo(x - delta)) / (2 * delta) - (foo(x + newDelta) - foo(x - newDelta)) / (2 * newDelta)) > epsilon &&  numberAttemmpts < numberIterations) {
-      delta = newDelta;
-      newDelta = delta + epsilon;
-    }
+    var epsilon = Math.pow(2.2, -16);
+    var delta = x * epsilon;
     return (foo(x + delta) - foo(x - delta)) / (2 * delta);
   }
 
@@ -156,7 +148,8 @@ function NumberHelper() {
     getFibonacciSeries: getFibonacciSeries,
     getFibonacciSeriesUpto: getFibonacciSeriesUpto,
     listPrimeNumbersUpto: listPrimeNumbersUpto,
-    getPrimeFactors: getPrimeFactors
+    getPrimeFactors: getPrimeFactors,
+    computeSlope: computeSlope
   }
 };
 
