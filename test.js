@@ -26,6 +26,7 @@ if(primeNumberListUptoTest() === 'pass') {
   console.log('fail');
 }
 
+<<<<<<< HEAD
 // primeFactorTest();
 
 function blah(x) {
@@ -37,3 +38,31 @@ function test() {
 }
 
 test();
+=======
+primeFactorTest();
+
+var foo1 = function(x) {
+  return x * x;
+}
+
+var foo2 = function(x) {
+  return Math.sin(x);
+}
+
+var foo3 = function(x) {
+  return Math.cos(x);
+}
+
+var foo4 = function(x) {
+  return 4 * x + 5;
+}
+
+function computeSlopeTest() {
+  console.log(nh().computeSlope(foo1, 2));
+  console.log(nh().computeSlope(foo2, Math.PI));
+  console.log(nh().computeSlope(foo3, Math.PI));
+  console.log(nh().computeSlope(foo4, 10));
+}
+
+computeSlopeTest();
+>>>>>>> 0bb7b5ff26f8620dd5dd08bd9a05af1a2b66e53e
