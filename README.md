@@ -42,3 +42,22 @@ Generates a list all prime factors of a given input.
 var nh = require('math-lib');
 console.log(nh().getPrimeFactors(600851475143)); // returns [ 71, 839, 1471, 6857 ]
 ```
+
+## computeSlope(foo, x)
+Computes the first derivative (slope) of a function foo at x. Central
+difference method is used to compute the first derivative. Methodology
+used to compute the first derivative and the choice of step size is
+detailed here: https://en.wikipedia.org/wiki/Numerical_differentiation
+User has to ensure that the function foo is differentiable at x.
+```
+var nh = require('math-lib');
+console.log(nh().computeSlope(function(x) {
+  return x * x;
+}, 2)); //returns 4.00000000
+```
+```
+var foo2 = function(x) {
+  return Math.sin(x);
+};
+console.log(nh().computeSlope(foo2, Math.PI)); // returns -0.99999999
+```

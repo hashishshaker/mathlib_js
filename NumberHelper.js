@@ -131,17 +131,25 @@ function NumberHelper() {
   }
 
   /*
-  * Computes the slope of a function foo at x
+  * Computes the first derivative (slope) of a function foo at x. Central
+  * difference method is used to compute the first derivative. Methodology
+  * used to compute the first derivative and the choice of step size is
+  * detailed here: https://en.wikipedia.org/wiki/Numerical_differentiation
+  * User has to ensure that the function foo is differentiable at x
   * @param {Function} foo - Function for which the slope is to be computed
   * @param {Number} x - The value at which the slope is to be computed
   * @return {Number} The value of slope of fucntion at x of function foo
   */
   function computeSlope(foo, x) {
     var epsilon = Math.pow(2.2, -16);
-    var delta = x * epsilon;
-    return (foo(x + delta) - foo(x - delta)) / (2 * delta);
-  }
+    var h = x * Math.sqrt(epsilon);
+    var fooDoublePrime = (foo(x + h) + foo(x - h) -2 * foo(x)) / (h * h);
 
+    if(fooDoublePrime !== 0) {
+      h = 2 * Math.sqrt(epsilon * Math.abs(foo(x) / fooDoublePrime));
+    }
+   return (foo(x + h) - foo(x - h)) / (2 * h);
+  }
 
   return {
     checkPrime: checkPrime,
