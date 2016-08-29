@@ -20,11 +20,20 @@ function primeFactorTest() {
   console.log(nh().getPrimeFactors(600851475143));
 }
 
-
 if(primeNumberListUptoTest() === 'pass') {
   console.log('pass');
 } else {
   console.log('fail');
 }
 
-primeFactorTest();
+// primeFactorTest();
+
+function blah(x) {
+  return Math.cos(x);
+}
+
+function test() {
+  console.log(nh().computeSlope(blah, 3.14159));
+}
+
+test();

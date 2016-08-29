@@ -138,7 +138,7 @@ function NumberHelper() {
   */
   function computeSlope(foo, x) {
     var epsilon = Math.pow(10, -14);
-    var delta = 0.1;
+    var delta = Math.pow(10, -7);
     var numberIterations = 1000;
     var numberAttemmpts = 0
     var newDelta = delta + epsilon;
@@ -156,7 +156,8 @@ function NumberHelper() {
     getFibonacciSeries: getFibonacciSeries,
     getFibonacciSeriesUpto: getFibonacciSeriesUpto,
     listPrimeNumbersUpto: listPrimeNumbersUpto,
-    getPrimeFactors: getPrimeFactors
+    getPrimeFactors: getPrimeFactors,
+    computeSlope: computeSlope
   }
 };
 
