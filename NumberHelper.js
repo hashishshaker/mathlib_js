@@ -27,7 +27,7 @@ function NumberHelper() {
   * @param {Number} a0 - Positive Integer that signifies the first number in the sequence
   * @param {Number} a1 - Positive Integer that signifies the second number in the sequence
   * @param {Number} numberRequired - Positive Integer that denotes the number of terms of the Fibonacci series to be generated
-  * @return {JSON} A JSON array that contains the list of the Fibonacci Series, invalid input error if a0 and a1 are not positive integers, Error is a0 >= a1, Error if a0 or a1 is larger than the largest number supported by Javascript
+  * @return {JSON} A JSON array that contains the list of the Fibonacci Series, invalid input error if a0 and a1 are not positive integers, Error if a0 >= a1, Error if a0 or a1 is larger than the largest number supported by Javascript
   */
   function getFibonacciSeries(a0, a1, numberRequired) {
     if (a0 >= 0 && a1 >= 1 && a1 > a0 && Number.isInteger(a0) && Number.isInteger(a1) && a0 < Number.MAX_SAFE_INTEGER && a1 < Number.MAX_SAFE_INTEGER) {
@@ -130,12 +130,34 @@ function NumberHelper() {
     return result;
   }
 
+  /*
+  * Computes the first derivative (slope) of a function foo at x. Central
+  * difference method is used to compute the first derivative. Methodology
+  * used to compute the first derivative and the choice of step size is
+  * detailed here: https://en.wikipedia.org/wiki/Numerical_differentiation
+  * User has to ensure that the function foo is differentiable at x
+  * @param {Function} foo - Function for which the slope is to be computed
+  * @param {Number} x - The value at which the slope is to be computed
+  * @return {Number} The value of slope of fucntion at x of function foo
+  */
+  function computeSlope(foo, x) {
+    var epsilon = Math.pow(2.2, -16);
+    var h = x * Math.sqrt(epsilon);
+    var fooDoublePrime = (foo(x + h) + foo(x - h) -2 * foo(x)) / (h * h);
+
+    if(fooDoublePrime !== 0) {
+      h = 2 * Math.sqrt(epsilon * Math.abs(foo(x) / fooDoublePrime));
+    }
+   return (foo(x + h) - foo(x - h)) / (2 * h);
+  }
+
   return {
     checkPrime: checkPrime,
     getFibonacciSeries: getFibonacciSeries,
     getFibonacciSeriesUpto: getFibonacciSeriesUpto,
     listPrimeNumbersUpto: listPrimeNumbersUpto,
-    getPrimeFactors: getPrimeFactors
+    getPrimeFactors: getPrimeFactors,
+    computeSlope: computeSlope
   }
 };
 

@@ -20,7 +20,6 @@ function primeFactorTest() {
   console.log(nh().getPrimeFactors(600851475143));
 }
 
-
 if(primeNumberListUptoTest() === 'pass') {
   console.log('pass');
 } else {
@@ -28,3 +27,31 @@ if(primeNumberListUptoTest() === 'pass') {
 }
 
 primeFactorTest();
+
+var foo1 = function(x) {
+  return x * x;
+};
+
+var foo2 = function(x) {
+  return Math.sin(x);
+};
+
+var foo3 = function(x) {
+  return Math.cos(x);
+};
+
+var foo4 = function(x) {
+  return 4 * x + 5;
+};
+
+function computeSlopeTest() {
+  console.log(nh().computeSlope(foo1, 2));
+  console.log(nh().computeSlope(function(x) {
+    return x * x;
+  }, 2));
+  console.log(nh().computeSlope(foo2, Math.PI));
+  console.log(nh().computeSlope(foo3, Math.PI));
+  console.log(nh().computeSlope(foo4, 10));
+}
+
+computeSlopeTest();
