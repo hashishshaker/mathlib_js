@@ -61,3 +61,15 @@ var foo2 = function(x) {
 };
 console.log(nh().computeSlope(foo2, Math.PI)); // returns -0.99999999
 ```
+
+## computeSlope(foo, x)
+Computes the second derivative of a function foo at x. Central difference
+method is used to compute the second derivative. Methodology used to compute
+the second derivative and the choice of step size is detailed here:
+https://en.wikipedia.org/wiki/Second_derivative
+User has to ensure that the function foo is differentiable twice at x.
+```
+console.log('foo1', nh().computeSecondDerivative(function(x) {
+  return x * x;
+}, 2)); // returns 1.999999
+```

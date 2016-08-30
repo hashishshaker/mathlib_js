@@ -54,4 +54,14 @@ function computeSlopeTest() {
   console.log(nh().computeSlope(foo4, 10));
 }
 
+function secondDerivativeTest() {
+  console.log('foo1', nh().computeSecondDerivative(foo1, 2));
+  console.log('foo1', nh().computeSecondDerivative(function(x) {
+    return x * x;
+  }, 2));
+  console.log('foo2', nh().computeSecondDerivative(foo2, Math.PI));
+  console.log('foo3', nh().computeSecondDerivative(foo3, Math.PI));
+  console.log('foo4', nh().computeSecondDerivative(foo4, 10));
+}
+
 computeSlopeTest();
