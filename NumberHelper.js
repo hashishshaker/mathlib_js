@@ -143,12 +143,28 @@ function NumberHelper() {
   function computeSlope(foo, x) {
     var epsilon = Math.pow(2.2, -16);
     var h = x * Math.sqrt(epsilon);
-    var fooDoublePrime = (foo(x + h) + foo(x - h) -2 * foo(x)) / (h * h);
+    var fooDoublePrime = computeSecondDerivative(foo, x);
 
     if(fooDoublePrime !== 0) {
       h = 2 * Math.sqrt(epsilon * Math.abs(foo(x) / fooDoublePrime));
     }
    return (foo(x + h) - foo(x - h)) / (2 * h);
+  }
+
+  /*
+  * Computes the second derivative of a function foo at x. Central difference
+  * method is used to compute the second derivative. Methodology used to compute
+  * the second derivative and the choice of step size is detailed here:
+  * https://en.wikipedia.org/wiki/Second_derivative
+  * User has to ensure that the function foo is differentiable twice at x
+  * @param {Function} foo - Function for which the slope is to be computed
+  * @param {Number} x - The value at which the slope is to be computed
+  * @return {Number} The value of slope of fucntion at x of function foo
+  */
+  function computeSecondDerivative(foo, x) {
+    var epsilon = Math.pow(2.2, -16);
+    var h = x * Math.sqrt(epsilon);
+    return (foo(x + h) + foo(x - h) - 2 * foo(x)) / (h * h);
   }
 
   return {
@@ -157,7 +173,8 @@ function NumberHelper() {
     getFibonacciSeriesUpto: getFibonacciSeriesUpto,
     listPrimeNumbersUpto: listPrimeNumbersUpto,
     getPrimeFactors: getPrimeFactors,
-    computeSlope: computeSlope
+    computeSlope: computeSlope,
+    computeSecondDerivative: computeSecondDerivative
   }
 };
 
