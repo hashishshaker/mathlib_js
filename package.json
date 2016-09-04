@@ -1,9 +1,7 @@
 {
   "name": "math-lib",
   "version": "0.1.2",
-  "description": "Math library that contains functions for prime number
-    computations, root finding using Newton Raphson, first and second derivative
-    computations",
+  "description": "Math library that contains functions for prime number computations, root finding using Newton Raphson, first and second derivative computations",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
