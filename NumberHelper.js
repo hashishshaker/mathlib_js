@@ -154,7 +154,7 @@ function NumberHelper() {
   */
   function computeSlope(foo, x) {
     var epsilon = Math.pow(2.2, -16);
-    var h = x * Math.sqrt(epsilon);
+    var h = x === 0 ? Math.sqrt(epsilon) : x * Math.sqrt(epsilon);
     var fooDoublePrime = computeSecondDerivative(foo, x);
 
     if(fooDoublePrime !== 0) {
@@ -175,7 +175,7 @@ function NumberHelper() {
   */
   function computeSecondDerivative(foo, x) {
     var epsilon = Math.pow(2.2, -16);
-    var h = x * Math.sqrt(epsilon);
+    var h = x === 0 ? Math.sqrt(epsilon) : x * Math.sqrt(epsilon);
     return (foo(x + h) + foo(x - h) - 2 * foo(x)) / (h * h);
   }
 
