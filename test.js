@@ -29,7 +29,7 @@ if(primeNumberListUptoTest() === 'pass') {
 primeFactorTest();
 
 var foo1 = function(x) {
-  return x * x;
+  return x * x - 5 * x + 6;
 };
 
 var foo2 = function(x) {
@@ -64,4 +64,8 @@ function secondDerivativeTest() {
   console.log('foo4', nh().computeSecondDerivative(foo4, 10));
 }
 
-computeSlopeTest();
+function newtonRaphsonTest() {
+  console.log(nh().newtonRaphson(foo1, 100, 100));
+}
+
+newtonRaphsonTest();
