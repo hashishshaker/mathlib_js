@@ -73,3 +73,21 @@ console.log('foo1', nh().computeSecondDerivative(function(x) {
   return x * x;
 }, 2)); // returns 1.999999
 ```
+
+## newtonRaphson(foo, x, numIterations)
+Computes the nearest root of function foo using Newton Raphson method.
+The root finding algorithm begins the search at x and iterates for the root
+for the number of times as specified by the second parameter - numIterations.
+```
+var foo1 = function(x) {
+  return x * x - 5 * x + 6;
+};
+
+function newtonRaphsonTest() {
+  console.log(nh().newtonRaphson(foo1, -100, 100));
+} // returns 2
+
+function newtonRaphsonTest() {
+  console.log(nh().newtonRaphson(foo1, -100, 100));
+} // returns 2.999999
+```
