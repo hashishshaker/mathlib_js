@@ -1,7 +1,7 @@
 function NumberHelper() {
   /*
   * Checks if the input number is a prime number or not
-  * @param {Number} input - Postitive integer
+  * @param {Number} input - Positive integer
   * @returns {Boolean} - true if input is a prime number, false if number is not
   * a prime number, Error if input is not a positive integer, Error if input is
   * larger than the largest integer supported by Javascript
