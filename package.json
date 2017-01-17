@@ -1,6 +1,6 @@
 {
   "name": "math-lib",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Math library that contains functions for prime number computations, root finding using Newton Raphson, first and second derivative computations",
   "main": "index.js",
   "scripts": {
